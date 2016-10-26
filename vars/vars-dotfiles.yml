@@ -1,6 +1,6 @@
 ---
 
-dotfiles_repo: https://github.com/fubarhouse/mac-dev-playbook-dotfiles.git
+dotfiles_repo: https://github.com/nauman-leghari-wipro/mac-dev-playbook-dotfiles.git
 dotfiles_repo_local_destination: ~/Documents/dotfiles
 dotfiles_files:
   - .bash_profile

@@ -24,8 +24,8 @@ if [[ -d "/Users/${WHOAMI}/.setup" ]]; then
     rm -rf "/Users/${WHOAMI}/.setup" > /dev/null;
 fi
 
-git clone https://github.com/fubarhouse/mac-dev-playbook.git "/Users/${WHOAMI}/.setup" > /dev/null;
-git clone https://github.com/fubarhouse/mac-dev-playbook-dotfiles.git "/Users/${WHOAMI}/Documents/dotfiles" > /dev/null;
+git clone https://github.com/nauman-leghari-wipro/mac-dev-playbook.git "/Users/${WHOAMI}/.setup" > /dev/null;
+git clone https://github.com/nauman-leghari-wipro/mac-dev-playbook-dotfiles.git "/Users/${WHOAMI}/Documents/dotfiles" > /dev/null;
 
 if [[ -n $1 ]] && [[ -n $2 ]]; then
     EXTRAVARS="app_store_email=$1 app_store_password=$2";
