@@ -9,20 +9,12 @@ homebrew_installed_packages:
   - python
   - sqlite
   - mas
-  - mcrypt
   - mysql
   - npm
   - nvm
-  - php56
-  - php56-mcrypt
-  - php56-xdebug
   - ssh-copy-id
-  - cowsay
-  - ios-sim
   - readline
-  - subversion
   - openssl
-  - drush
   - wget
   - tree
   - aws-shell
@@ -34,35 +26,18 @@ homebrew_taps:
   - caskroom/versions
   - homebrew/binary
   - homebrew/dupes
-  - homebrew/php
   - homebrew/versions
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
   # Browsers
   - google-chrome
-  - firefoxdeveloperedition
-  # Cloud-based storage
-  - dropbox
-  - google-drive
-  # Communication
-  - google-hangouts
-  # Creative
-  - adobe-creative-cloud
-  - jetbrains-toolbox
-  # Entertainment
-  - steam
-  - kodi
-  - vlc
-  - xbox360-controller-driver
   # Tools
   - ccleaner
   - iterm2
   # Tools - Development
   - filezilla
-  - gitkraken
+  - sourcetree
   - sublime-text
-  - teamviewer
-  - tower
   - virtualbox
   - vagrant
