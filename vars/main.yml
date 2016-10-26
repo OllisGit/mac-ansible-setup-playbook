@@ -1,7 +1,3 @@
 ---
 
 downloads: ~/.ansible-downloads/
-configure_sudoers: yes
-python_dev_versions:
-  - version: "3.4"
-  - version: "2.7"

@@ -4,8 +4,8 @@ homebrew_installed_packages:
   - ansible
   - dockutil
   - git
-  - go
   - gpg
+  - gpg-agent
   - python
   - sqlite
   - mysql
@@ -19,6 +19,10 @@ homebrew_installed_packages:
   - aws-shell
   - ack
   - graphviz
+  - terraform
+  - bash-completion
+  - maven
+  - packer
 
 homebrew_taps:
   - caskroom/cask
@@ -33,12 +37,13 @@ homebrew_cask_apps:
   # Browsers
   - google-chrome
   # Tools
-  - ccleaner
   - iterm2
   # Tools - Development
-  - filezilla
   - sourcetree
   - virtualbox
   - vagrant
   - font-fira-code
   - docker-toolbox
+  - tunnelblick
+  - java7
+  - java

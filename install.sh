@@ -3,6 +3,12 @@
 # Usage:
 # install.sh accout@apple.com password
 
+# Prompt the user for their sudo password
+sudo -v
+
+# Enable passwordless sudo for the macbuild run
+sudo sed -i -e "s/^%admin.*/%admin  ALL=(ALL) NOPASSWD: ALL/" /etc/sudoers
+
 if [[ -z $(which brew) ]]; then
   echo "Installing Homebrew...";
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)";
@@ -41,5 +47,8 @@ ansible-galaxy install -r ./requirements.yml;
 echo "Initiating playbook";
 
 ansible-playbook ./main.yml -i inventory -U $(whoami) --ask-sudo-pass --extra-vars "${EXTRAVARS}";
+
+# Disable passwordless sudo after the macbuild is complete
+sudo sed -i -e "s/^%admin.*/%admin  ALL=(ALL) ALL/" /etc/sudoers
 
 echo "Done.";
