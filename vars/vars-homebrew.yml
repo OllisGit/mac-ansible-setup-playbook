@@ -8,7 +8,6 @@ homebrew_installed_packages:
   - gpg
   - python
   - sqlite
-  - mas
   - mysql
   - npm
   - nvm
@@ -27,6 +26,7 @@ homebrew_taps:
   - homebrew/binary
   - homebrew/dupes
   - homebrew/versions
+  - caskroom/fonts
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
@@ -38,6 +38,7 @@ homebrew_cask_apps:
   # Tools - Development
   - filezilla
   - sourcetree
-  - sublime-text
   - virtualbox
   - vagrant
+  - font-fira-code
+  - docker-toolbox
