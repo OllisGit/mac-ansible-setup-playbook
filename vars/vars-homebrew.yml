@@ -21,7 +21,6 @@ homebrew_installed_packages:
   - graphviz
   - terraform
   - bash-completion
-  - maven
   - packer
 
 homebrew_taps:
