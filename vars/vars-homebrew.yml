@@ -24,6 +24,10 @@ homebrew_installed_packages:
   - openssl
   - drush
   - wget
+  - tree
+  - aws-shell
+  - ack
+  - graphviz
 
 homebrew_taps:
   - caskroom/cask
