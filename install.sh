@@ -11,7 +11,7 @@ sudo sed -i -e "s/^%admin.*/%admin  ALL=(ALL) NOPASSWD: ALL/" /etc/sudoers
 
 if [[ -z $(which brew) ]]; then
   echo "Installing Homebrew...";
-  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)";
+  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" < /dev/null;
 fi
 
 if [[ -z $(which ansible) ]]; then
