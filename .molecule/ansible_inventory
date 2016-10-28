@@ -1,0 +1,7 @@
+mac-dev-playbook ansible_connection=docker
+
+[localhost]
+mac-dev-playbook
+
+[group1]
+mac-dev-playbook

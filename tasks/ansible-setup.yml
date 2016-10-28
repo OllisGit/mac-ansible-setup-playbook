@@ -10,7 +10,6 @@
   file:
     path: /etc/ansible
     state: directory
-  become: yes
 
 - name: Symlink /usr/local/etc/ansible to /etc/ansible.
   become: yes
