@@ -23,6 +23,7 @@ homebrew_installed_packages:
   - bash-completion
   - packer
   - jq
+  - httpie
 
 homebrew_taps:
   - caskroom/cask
