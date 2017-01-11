@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Usage:
-# install.sh accout@apple.com password
+# install.sh
 
 # Prompt the user for their sudo password
 sudo -v
@@ -33,11 +33,8 @@ fi
 git clone https://github.com/nauman-leghari-wipro/mac-dev-playbook.git "/Users/${WHOAMI}/.setup";
 git clone https://github.com/nauman-leghari-wipro/mac-dev-playbook-dotfiles.git "/Users/${WHOAMI}/Documents/dotfiles";
 
-if [[ -n $1 ]] && [[ -n $2 ]]; then
-    EXTRAVARS="app_store_email=$1 app_store_password=$2";
-else
-    EXTRAVARS="a=b";
-fi
+echo "Changing permissions for /usr/local"
+chown root:admin /usr/local && chmod 0775 /usr/local
 
 cd "/Users/${WHOAMI}/.setup/";
 
