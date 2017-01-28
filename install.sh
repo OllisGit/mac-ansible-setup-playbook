@@ -69,6 +69,9 @@ git clone https://github.com/MNicks/mac-dev-playbook.git "/Users/${WHOAMI}/.setu
 fancy_echo "Changing to .setup repo dir ..."
 cd "/Users/${WHOAMI}/.setup/";
 
+echo "Installing requirements";
+ansible-galaxy install -r ./requirements.yml;
+
 # Run this from the same directory as this README file.
 fancy_echo "Running ansible playbook ..."
 ansible-playbook ./main.yml -i hosts -U $(whoami) --ask-sudo-pass -vvvv
