@@ -1,16 +1,15 @@
 #!/bin/sh
 
-# Welcome to the siyelo laptop script!
-# Be prepared to turn your OSX box into 
+# Be prepared to turn your OSX box into
 # a development beast.
 #
-# This script bootstraps our OSX laptop to a point where we can run
+# This script bootstraps a OSX laptop to a point where we can run
 # Ansible on localhost. It;
-#  1. Installs 
+#  1. Installs
 #    - xcode
 #    - homebrew
-#    - ansible (via brew) 
-#    - a few ansible galaxy playbooks (zsh, homebrew, cask etc)  
+#    - ansible (via brew)
+#    - a few ansible galaxy playbooks (zsh, homebrew, cask etc)
 #  2. Kicks off the ansible playbook
 #    - main.yml
 #
@@ -37,7 +36,7 @@ set -e
 # Ensure Apple's command line tools are installed
 if ! command -v cc >/dev/null; then
   fancy_echo "Installing xcode ..."
-  xcode-select --install 
+  xcode-select --install
 else
   fancy_echo "Xcode already installed. Skipping."
 fi
@@ -52,22 +51,26 @@ fi
 # [Install Ansible](http://docs.ansible.com/intro_installation.html).
 if ! command -v ansible >/dev/null; then
   fancy_echo "Installing Ansible ..."
-  brew install ansible 
+  brew install ansible
 else
   fancy_echo "Ansible already installed. Skipping."
 fi
 
+WHOAMI=$(whoami);
+
 # Clone the repository to your local drive.
-if [ -d "./laptop" ]; then
-  fancy_echo "Laptop repo dir exists. Removing ..."
-  rm -rf ./laptop/
+if [[ -d "/Users/${WHOAMI}/.setup" ]]; then
+    echo "Removing playbook";
+    rm -rf "/Users/${WHOAMI}/.setup";
 fi
-fancy_echo "Cloning laptop repo ..."
-git clone https://github.com/siyelo/laptop.git 
+fancy_echo "Cloning .setup repo ..."
+git clone https://github.com/MNicks/mac-dev-playbook.git "/Users/${WHOAMI}/.setup";
 
-fancy_echo "Changing to laptop repo dir ..."
-cd laptop
+fancy_echo "Changing to .setup repo dir ..."
+cd "/Users/${WHOAMI}/.setup/";
 
-# Run this from the same directory as this README file. 
+# Run this from the same directory as this README file.
 fancy_echo "Running ansible playbook ..."
-ansible-playbook playbook.yml -i hosts --ask-sudo-pass -vvvv 
+ansible-playbook ./main.yml -i hosts -U $(whoami) --ask-sudo-pass -vvvv
+
+echo "Done.";
