@@ -57,7 +57,7 @@ homebrew_cask_apps:
   #- anvil # run sites locally
   - apptrap # remove associated prefs when uninstalling
   - appzapper # uninstaller
-  - atom # sublime without annoying popup | https://atom.io/download/mac
+  #- atom # sublime without annoying popup | https://atom.io/download/mac
   - bettertouchtool # window snapping. (maybe Moom is more lightweight?)
   - betterzipql # quick look for zips
   - carbon-copy-cloner # backups | https://bombich.com/download
@@ -87,7 +87,7 @@ homebrew_cask_apps:
   - monolingual # remove unneeded osx lang files
   - nvalt # fast note taking
   - onyx # system maintenance
-  - packer # machine images
+  #- packer # machine images
   - qlcolorcode # quick look syntax highlighting
   - qlimagesize # quick look image dimensions
   - qlmarkdown # quick look .md files
