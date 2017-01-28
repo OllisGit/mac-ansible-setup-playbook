@@ -71,10 +71,10 @@
 # require manual intervention!
 #
 
-- name: Run Little Snitch Installer
+#- name: Run Little Snitch Installer
   #shell: open /opt/homebrew-cask/Caskroom/little-snitch/3.5.3/Little\ Snitch\ Installer.app
-  shell: open /usr/local/Caskroom/little-snitch/3.7.2/Little\ Snitch\ Installer.app
-  when: "'little-snitch' in applications"
+#  shell: open /usr/local/Caskroom/little-snitch/3.7.2/Little\ Snitch\ Installer.app
+#  when: "'little-snitch' in applications"
 
 - name: Run Monolingual
   shell: open ~/Applications/Monolingual.app
