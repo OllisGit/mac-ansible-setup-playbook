@@ -7,7 +7,7 @@ homebrew_installed_packages:
   - autojump # quickly navigate from cmd line
   - bash # Bash 4
   - bash-completion
-  - brew-cask
+  #- brew-cask
   - cowsay # amazing
   - coreutils # Install GNU core utilities (those that come with OS X are outdated)
   - docker # | https://docs.docker.com/installation/mac/

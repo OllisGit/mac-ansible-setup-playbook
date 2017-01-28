@@ -15,6 +15,9 @@
 #
 # It will ask you for your sudo password
 
+# Prompt the user for their sudo password
+sudo -v
+
 fancy_echo() {
   local fmt="$1"; shift
 
@@ -27,11 +30,6 @@ fancy_echo "Boostrapping ..."
 trap 'ret=$?; test $ret -ne 0 && printf "failed\n\n" >&2; exit $ret' EXIT
 
 set -e
-
-# Here we go.. ask for the administrator password upfront and run a
-# keep-alive to update existing `sudo` time stamp until script has finished
-# sudo -v
-# while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 # Ensure Apple's command line tools are installed
 if ! command -v cc >/dev/null; then
@@ -66,6 +64,9 @@ fi
 fancy_echo "Cloning .setup repo ..."
 git clone https://github.com/MNicks/mac-dev-playbook.git "/Users/${WHOAMI}/.setup";
 
+echo "Changing permissions for /usr/local"
+sudo chown root:admin /usr/local && chmod 0775 /usr/local
+
 fancy_echo "Changing to .setup repo dir ..."
 cd "/Users/${WHOAMI}/.setup/";
 
@@ -74,6 +75,6 @@ ansible-galaxy install -r ./requirements.yml;
 
 # Run this from the same directory as this README file.
 fancy_echo "Running ansible playbook ..."
-ansible-playbook ./main.yml -i hosts -U $(whoami) --ask-sudo-pass -vvvv
+ansible-playbook ./main.yml -i hosts --ask-sudo-pass -vvvv
 
 echo "Done.";
