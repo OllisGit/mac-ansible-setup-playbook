@@ -15,39 +15,28 @@ This playbook will be updated throughout my life with various features, function
   Note that MACSTOREUSER and MACSTOREPASS will need to be replaced with your details, and MAS must be a part of homebrew's package list.
   
   1. `xcode-select --install`
-  2. `curl https://raw.githubusercontent.com/fubarhouse/mac-dev-playbook/master/install.sh | bash -s -- MACSTOREUSER MACSTOREPASS`
+  2. `curl https://raw.githubusercontent.com/MNicks/mac-dev-playbook/master/install.sh | bash -s -- MACSTOREUSER MACSTOREPASS`
+
 
 ### Non-authenticated method.
   
   If your user account is definitely logged into the Apple store, authentication isn't essential so you can use the following instead of the above commands.
   
   1. `xcode-select --install`
-  2. `curl https://raw.githubusercontent.com/fubarhouse/mac-dev-playbook/master/install.sh | bash`
+  2. `curl https://raw.githubusercontent.com/MNicks/mac-dev-playbook/master/install.sh | bash`
 
 ## Included Applications / Configuration
 
 ###Applications (installed with Homebrew Cask):
 
-  - adobe-creative-cloud
   - ccleaner
   - dropbox
-  - filezilla
   - firefoxdeveloperedition
   - gitkraken
   - google-chrome
   - google-drive
-  - google-hangouts
   - iterm2
-  - jetbrains-toolbox
-  - kodi
-  - steam
-  - sublime-text
-  - teamviewer
-  - tower
-  - vagrant
-  - virtualbox
   - vlc
-  - xbox360-controller-driver
 
 ### Packages (installed with Homebrew):
 
@@ -57,17 +46,11 @@ This playbook will be updated throughout my life with various features, function
   - go
   - gpg
   - python
-  - sqlite
   - mcrypt
-  - mysql
   - npm
   - nvm
-  - php56
-  - php56-mcrypt
-  - php56-xdebug
   - ssh-copy-id
   - cowsay
-  - ios-sim
   - readline
   - subversion
   - openssl
