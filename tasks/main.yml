@@ -77,5 +77,5 @@
 #  when: "'little-snitch' in homebrew_cask_apps"
 
 - name: Run Monolingual
-  shell: open ~/Applications/Monolingual.app
+  shell: open /Applications/Monolingual.app
   when: "'monolingual' in homebrew_cask_apps"
