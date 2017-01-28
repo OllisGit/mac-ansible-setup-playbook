@@ -6,7 +6,6 @@
   vars_files:
     - vars/main.yml
     - vars/vars-homebrew.yml
-    - vars/vars-dotfiles.yml
     - vars/vars-dockutil.yml
 
   roles:
@@ -16,6 +15,7 @@
 
   tasks:
     - include: tasks/ansible-setup.yml
+    - include: tasks/main.yml
     - include: tasks/preferences.yml
     - include: tasks/dockutil.yml
       when: '"dockutil" in homebrew_installed_packages'

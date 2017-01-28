@@ -1,3 +1,11 @@
 ---
 
 downloads: ~/.ansible-downloads/
+
+zsh_path: /usr/local/bin/zsh
+
+home: "{{ lookup('env','HOME') }}"
+
+dotfile_repo_username: MNicks # the GH repo where your dotfiles are
+
+install_oh_my_zsh:  true

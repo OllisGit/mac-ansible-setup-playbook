@@ -9,7 +9,7 @@
 dockitems_disabled:
   - Siri
   - Launchpad
-  - Mail
+  #- Mail
   - Contacts
   - Notes
   - Reminders
@@ -28,3 +28,7 @@ dockitems_enabled:
   - name: iTerm
     path: "/Applications/iTerm.app"
     pos: 1
+
+  - name: Chrome
+    path: "/Applications/Google Chrome.app"
+    pos: 2

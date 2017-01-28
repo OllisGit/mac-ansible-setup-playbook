@@ -1,29 +1,45 @@
 ---
 
 homebrew_installed_packages:
-  - ansible
-  - dockutil
+  # - ansible #already installed by bootstrap script
+  - ack
+  - autoconf
+  - autojump # quickly navigate from cmd line
+  - bash # Bash 4
+  - bash-completion
+  - brew-cask
+  - cowsay # amazing
+  - coreutils # Install GNU core utilities (those that come with OS X are outdated)
+  - docker # | https://docs.docker.com/installation/mac/
+  - findutils  # Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
+  - httpie
   - git
+  - go
   - gpg
   - gpg-agent
-  - python
-  - sqlite
-  - mysql
+  - graphviz
+  - jq
+  - hub # github
+  - keybase # in alpha at time of writing.
+  #- mercurial # Used to need it for golang src builds. Who knows, might come in handy again.
+  - mtr # better traceroute
+  - node
   - npm
   - nvm
+  - openssl
+  - packer
+  - python
   - ssh-copy-id
   - readline
-  - openssl
-  - wget
+  - rename # rename multiple files
+  - rsync
+  - the_silver_searcher # fast ack-grep
+  - tmux
   - tree
-  - aws-shell
-  - ack
-  - graphviz
-  - terraform
-  - bash-completion
-  - packer
-  - jq
-  - httpie
+  - tmux
+  - vim
+  - wget
+  - zsh
 
 homebrew_taps:
   - caskroom/cask
@@ -35,14 +51,53 @@ homebrew_taps:
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
-  - iterm2
+  #- 1password
+  #- adium
+  - alfred # | http://www.alfredapp.com
+  #- anvil # run sites locally
+  - apptrap # remove associated prefs when uninstalling
+  - appzapper # uninstaller
+  - atom # sublime without annoying popup | https://atom.io/download/mac
+  - bettertouchtool # window snapping. (maybe Moom is more lightweight?)
+  - betterzipql # quick look for zips
+  - carbon-copy-cloner # backups | https://bombich.com/download
+  - cheatsheet # know your shortcuts
+  - cyberduck # ftp, s3, openstack
+  - dash # totally sick API browser
+  #- deeper # (w/ onyx) turn on hidden functions
+  - diffmerge # free visual diq
+  - disk-inventory-x # reclaim space on your expensive-ass Apple SSD | http://www.derlien.com/
+  - dropbox # a worse Mega Sync
+  - eve # learn your shortcuts
+  #- filezilla
+  #- firefox
+  - firefoxdeveloperedition
+  - flux # get more sleep
+  - gitkraken
+  - google-drive
+  - imageoptim # optimize images
+  - istumbler # network discovery GUI
+  #- iterm2
+  - jumpcut # awesome clipboard
+  - karabiner # Keyboard customization
+  - keka # file archiving
+  - licecap # GIFs !
+  - little-snitch # awesome outbound firewall
+  - mactracker # benchmarking
+  - monolingual # remove unneeded osx lang files
+  - nvalt # fast note taking
+  - onyx # system maintenance
+  - packer # machine images
+  - qlcolorcode # quick look syntax highlighting
+  - qlimagesize # quick look image dimensions
+  - qlmarkdown # quick look .md files
+  - qlstephen # quick look extension-less text files
+  - sequel-pro # FREE SQL GUI!
+  - shortcat # kill your mouse
+  - shuttle # ssh management
+  - skype
   - sourcetree
-  - virtualbox
-  - vagrant
-  - font-fira-code
-  - docker-toolbox
-  - tunnelblick
+  - transmission # torrents
+  - vlc
   - java7
   - java # Installs Java8
-  - atom
-  - firefox

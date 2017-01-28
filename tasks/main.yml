@@ -1,0 +1,80 @@
+### ZSH radness
+- name: Determine if zsh is default/current shell
+  shell: echo $SHELL
+  register: current_shell
+
+- name: Enable zsh in /etc/shells
+  shell: sudo /bin/sh -c 'grep -q "{{ zsh_path }}" /etc/shells || echo "{{ zsh_path }}" >> /etc/shells'
+  when: current_shell.stdout != '/usr/local/bin/zsh'
+  #" unbreak my syntax highlighting...
+
+- name: Set zsh as default shell
+  shell: chsh -s {{ zsh_path }}
+  when: current_shell.stdout != '/usr/local/bin/zsh'
+  sudo: true
+
+- name: Use GNU tools instead of osx counterparts (grep find etc)
+  shell: echo 'export PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH' >> ~/.zshrc
+
+- name: Install oh-my-zsh
+  git: repo=https://github.com/robbyrussell/oh-my-zsh dest=~/.oh-my-zsh
+  sudo: false
+  when: install_oh_my_zsh == true
+  tags: install_oh_my_zsh
+
+### DOTFILES
+- name: Check rcm is installed
+  stat: path=/usr/local/bin/rcup
+  register: rcm_installed
+
+- name: Install rcm for dotfiles management
+  shell: brew tap thoughtbot/formulae && brew install rcm
+  when: rcm_installed.stat.exists == false
+
+- name: Check ~/src_dotfiles dir exists
+  stat: path=~/src_dotfiles/
+  register: src_dir_exists
+
+- name: Assures ~/src_dotfiles dir exists
+  file: path=~/src_dotfiles state=directory
+
+- name: Assures ~/src_dotfiles/thoughtbot dir exists
+  file: path=~/src_dotfiles/thoughtbot state=directory
+
+- name: Install thoughtbot/dotfiles
+  git: repo=https://github.com/thoughtbot/dotfiles.git dest=~/src_dotfiles/thoughtbot/dotfiles
+
+- name: Link ~/dotfiles to ~/src_dotfiles/thoughtbot/dotfiles
+  file: dest=~/dotfiles
+        src=~/src_dotfiles/thoughtbot/dotfiles
+        state=link
+        force=yes
+
+- name: Assures ~/src_dotfiles/{{ dotfile_repo_username }} dir exists
+  file: path=~/src_dotfiles/{{ dotfile_repo_username }} state=directory
+
+- name: Install {{ dotfile_repo_username }}/dotfiles
+  git: repo=https://github.com/{{ dotfile_repo_username }}/dotfiles.git dest=~/src_dotfiles/{{ dotfile_repo_username }}/dotfiles
+
+- name: Link ~/dotfiles-local to ~/src_dotfiles/{{ dotfile_repo_username }}/dotfiles
+  file: dest=~/dotfiles-local
+        src=~/src_dotfiles/{{ dotfile_repo_username }}/dotfiles
+        state=link
+        force=yes
+
+- name: Generate dotfiles with rcup
+  shell: env RCRC=~/dotfiles/rcrc rcup
+
+
+## POST INSTALL STEPS / Cask gotchas
+#
+# require manual intervention!
+#
+
+- name: Run Little Snitch Installer
+  shell: open /opt/homebrew-cask/Caskroom/little-snitch/3.5.3/Little\ Snitch\ Installer.app
+  when: "'little-snitch' in applications"
+
+- name: Run Monolingual
+  shell: open ~/Applications/Monolingual.app
+  when: "'monolingual' in applications"
