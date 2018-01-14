@@ -145,5 +145,5 @@ homebrew_cask_apps:
   - visual-studio-code
   - wifi-explorer
   #- vlc
-  - java7
+  #- java7
   - java # Installs Java8
