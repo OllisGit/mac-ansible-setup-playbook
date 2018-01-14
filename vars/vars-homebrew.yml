@@ -1,13 +1,11 @@
 ---
 
 homebrew_installed_packages:
-  # - ansible #already installed by bootstrap script
   - ack
   - autoconf
   - autojump # quickly navigate from cmd line
   - bash # Bash 4
   - bash-completion
-  #- brew-cask
   - battery
   - bazel
   - bfg
@@ -88,17 +86,11 @@ homebrew_taps:
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
-  #- 1password
-  #- adium
-  - alfred # | http://www.alfredapp.com
-  #- anvil # run sites locally
   - apptrap # remove associated prefs when uninstalling
   - appzapper # uninstaller
   #- atom # sublime without annoying popup | https://atom.io/download/mac
   - bettertouchtool # window snapping. (maybe Moom is more lightweight?)
-  - betterzipql # quick look for zips
   - captur #ui wrapper for osx screenscraper
-  - carbon-copy-cloner # backups | https://bombich.com/download
   - cheatsheet # know your shortcuts
   - cyberduck # ftp, s3, openstack
   - dash # totally sick API browser
@@ -107,10 +99,8 @@ homebrew_cask_apps:
   - disk-inventory-x # reclaim space on your expensive-ass Apple SSD | http://www.derlien.com/
   - dropbox # a worse Mega Sync
   - eve # learn your shortcuts
-  #- filezilla
   - firefox
   - firefoxdeveloperedition
-  - flux # get more sleep
   - gitkraken
   - google-drive
   - go2shell
@@ -128,7 +118,6 @@ homebrew_cask_apps:
   - nvalt # fast note taking
   - onedrive
   - onyx # system maintenance
-  #- packer # machine images
   - qlcolorcode # quick look syntax highlighting
   - qlimagesize # quick look image dimensions
   - qlmarkdown # quick look .md files
@@ -144,6 +133,4 @@ homebrew_cask_apps:
   - tunnelblick
   - visual-studio-code
   - wifi-explorer
-  #- vlc
-  #- java7
   - java # Installs Java8
