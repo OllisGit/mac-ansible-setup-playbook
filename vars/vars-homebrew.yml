@@ -14,6 +14,7 @@ homebrew_installed_packages:
   - findutils  # Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
   - httpie
   - git
+  - git-lfs
   - go
   - gpg
   - gpg-agent
@@ -22,6 +23,7 @@ homebrew_installed_packages:
   - hub # github
   - keybase # in alpha at time of writing.
   #- mercurial # Used to need it for golang src builds. Who knows, might come in handy again.
+  - moreutils
   - mtr # better traceroute
   - node
   - npm
@@ -60,6 +62,7 @@ homebrew_cask_apps:
   #- atom # sublime without annoying popup | https://atom.io/download/mac
   - bettertouchtool # window snapping. (maybe Moom is more lightweight?)
   - betterzipql # quick look for zips
+  - captur #ui wrapper for osx screenscraper
   - carbon-copy-cloner # backups | https://bombich.com/download
   - cheatsheet # know your shortcuts
   - cyberduck # ftp, s3, openstack
@@ -75,6 +78,7 @@ homebrew_cask_apps:
   - flux # get more sleep
   - gitkraken
   - google-drive
+  - go2shell
   - imageoptim # optimize images
   - istumbler # network discovery GUI
   #- iterm2
@@ -86,6 +90,7 @@ homebrew_cask_apps:
   - mactracker # benchmarking
   - monolingual # remove unneeded osx lang files
   - nvalt # fast note taking
+  - onedrive
   - onyx # system maintenance
   #- packer # machine images
   - qlcolorcode # quick look syntax highlighting
@@ -93,10 +98,12 @@ homebrew_cask_apps:
   - qlmarkdown # quick look .md files
   - qlstephen # quick look extension-less text files
   - sequel-pro # FREE SQL GUI!
+  - shimo # VPN Client
   - shortcat # kill your mouse
   - shuttle # ssh management
   - skype
   - sourcetree
+  - sts
   - transmission # torrents
   - vlc
   - java7
