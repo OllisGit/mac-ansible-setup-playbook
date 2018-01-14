@@ -72,6 +72,8 @@ homebrew_installed_packages:
   - wget
   - zsh
   - zsh-completions
+  - zsh-autosuggestions
+  - zsh-syntax-highlighting
 
 homebrew_taps:
   - homebrew/core
