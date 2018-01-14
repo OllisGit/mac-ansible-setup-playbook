@@ -8,9 +8,19 @@ homebrew_installed_packages:
   - bash # Bash 4
   - bash-completion
   #- brew-cask
+  - battery
+  - bazel
+  - bfg
+  - brew-cask-completion
   - cowsay # amazing
   - coreutils # Install GNU core utilities (those that come with OS X are outdated)
   - docker # | https://docs.docker.com/installation/mac/
+  - docker-clean
+  - docker-cloud
+  - docker-compose
+  - docker-gen
+  - docker-machine
+  - docker-swarm
   - findutils  # Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
   - httpie
   - git
@@ -21,8 +31,18 @@ homebrew_installed_packages:
   - graphviz
   - jq
   - hub # github
-  - keybase # in alpha at time of writing.
-  #- mercurial # Used to need it for golang src builds. Who knows, might come in handy again.
+  - launchctl-completion
+  - libevent
+  - libffi
+  - libvterm
+  - libxml2
+  - libyaml
+  - macvim
+  - mas
+  - maven
+  - mcrypt
+  - md5sha1sum
+  - mobile-shell
   - moreutils
   - mtr # better traceroute
   - node
@@ -31,6 +51,17 @@ homebrew_installed_packages:
   - openssl
   - packer
   - python
+  - python3
+  - packer-completion
+  - pandoc
+  - parallel
+  - pip-completion
+  - postgresql
+  - pup
+  - pv
+  - pyenv
+  - pyenv-virtualenv
+  - pyenv-virtualenvwrapper
   - ssh-copy-id
   - readline
   - rename # rename multiple files
@@ -42,14 +73,18 @@ homebrew_installed_packages:
   - vim
   - wget
   - zsh
+  - zsh-completions
 
 homebrew_taps:
+  - homebrew/core
   - caskroom/cask
   - caskroom/versions
   - homebrew/binary
   - homebrew/dupes
   - homebrew/versions
+  - homebrew/completions
   - caskroom/fonts
+  - Goles/battery
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
@@ -73,7 +108,7 @@ homebrew_cask_apps:
   - dropbox # a worse Mega Sync
   - eve # learn your shortcuts
   #- filezilla
-  #- firefox
+  - firefox
   - firefoxdeveloperedition
   - flux # get more sleep
   - gitkraken
@@ -81,7 +116,8 @@ homebrew_cask_apps:
   - go2shell
   - imageoptim # optimize images
   - istumbler # network discovery GUI
-  #- iterm2
+  - intellij-idea
+  - iterm2
   - jumpcut # awesome clipboard
   - karabiner # Keyboard customization
   - keka # file archiving
@@ -103,8 +139,11 @@ homebrew_cask_apps:
   - shuttle # ssh management
   - skype
   - sourcetree
-  - sts
+  #- sts
   - transmission # torrents
-  - vlc
+  - tunnelblick
+  - visual-studio-code
+  - wifi-explorer
+  #- vlc
   - java7
   - java # Installs Java8
