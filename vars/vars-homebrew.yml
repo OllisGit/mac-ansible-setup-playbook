@@ -103,6 +103,7 @@ homebrew_cask_apps:
   - eve # learn your shortcuts
   - firefox
   - firefoxdeveloperedition
+  - font-hack-nerd-font
   - gitkraken
   - google-drive
   - go2shell
