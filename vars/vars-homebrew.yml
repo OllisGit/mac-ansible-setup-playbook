@@ -7,7 +7,7 @@ homebrew_installed_packages:
   - bash # Bash 4
   - bash-completion
   - battery
-  - bazel
+  #- bazel
   - bfg
   - brew-cask-completion
   - cowsay # amazing
