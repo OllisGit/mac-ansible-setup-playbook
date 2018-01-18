@@ -98,7 +98,7 @@ homebrew_cask_apps:
   - dash # totally sick API browser
   - diffmerge # free visual diq
   - disk-inventory-x # reclaim space on your expensive-ass Apple SSD | http://www.derlien.com/
-  - dropbox # a worse Mega Sync
+  #- dropbox # a worse Mega Sync
   - eve # learn your shortcuts
   - firefox
   - firefoxdeveloperedition
