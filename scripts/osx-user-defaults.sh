@@ -332,31 +332,6 @@ defaults write com.tapbots.TweetbotMac statusViewImageType -int 1
 CFPreferencesAppSynchronize "com.tapbots.TweetbotMac"
 
 # ==============================================
-# f.lux
-# ==============================================
-echo "Setting f.lux preferences"
-FLUX_DOMAIN="org.herf.Flux"
-
-# Location, center of Braunschweig, Germany
-defaults write "${FLUX_DOMAIN}" location "52.2659400,10.5267300"
-defaults write "${FLUX_DOMAIN}" locationTextField "Braunschweig"
-defaults write "${FLUX_DOMAIN}" locationType "L"
-
-# Sunset temperature
-defaults write "${FLUX_DOMAIN}" lateColorTemp -int 6500
-
-# Bedtime temperature
-defaults write "${FLUX_DOMAIN}" nightColorTemp -int 3400
-
-# Wake up at 6.30
-defaults write "${FLUX_DOMAIN}" wakeTime -int 390
-
-# Sleep late on weekends
-defaults write "${FLUX_DOMAIN}" sleepLate -bool true
-
-CFPreferencesAppSynchronize "${FLUX_DOMAIN}"
-
-# ==============================================
 # Finder
 # ==============================================
 echo "Setting Finder preferences"
@@ -380,7 +355,7 @@ defaults write com.apple.finder ShowMountedServersOnDesktop -bool true
 defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 
 # Finder: show all filename extensions
-# defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
 # Finder: allow text selection in Quick Look
 defaults write com.apple.finder QLEnableTextSelection -bool true
@@ -503,18 +478,15 @@ defaults write com.apple.Safari SafariGeolocationPermissionPolicy -int 0
 # Do not track
 defaults write com.apple.Safari SendDoNotTrackHTTPHeader -bool true
 
-
 # Notifications
 
 # Don't even ask about the push notifications
 defaults write com.apple.Safari CanPromptForPushNotifications -bool false
 
-
 # Extensions settings
 
 # Update extensions automatically
 defaults write com.apple.Safari InstallExtensionUpdatesAutomatically -bool true
-
 
 # Advanced settings
 

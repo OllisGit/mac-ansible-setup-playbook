@@ -96,7 +96,6 @@ homebrew_cask_apps:
   - cheatsheet # know your shortcuts
   - cyberduck # ftp, s3, openstack
   - dash # totally sick API browser
-  #- deeper # (w/ onyx) turn on hidden functions
   - diffmerge # free visual diq
   - disk-inventory-x # reclaim space on your expensive-ass Apple SSD | http://www.derlien.com/
   - dropbox # a worse Mega Sync
@@ -104,8 +103,8 @@ homebrew_cask_apps:
   - firefox
   - firefoxdeveloperedition
   - font-hack-nerd-font
-  - gitkraken
-  - google-drive
+  #- gitkraken
+  #- google-drive
   - go2shell
   - imageoptim # optimize images
   - istumbler # network discovery GUI
@@ -115,7 +114,7 @@ homebrew_cask_apps:
   - karabiner # Keyboard customization
   - keka # file archiving
   - licecap # GIFs !
-  - little-snitch # awesome outbound firewall
+  #- little-snitch # awesome outbound firewall
   - mactracker # benchmarking
   - monolingual # remove unneeded osx lang files
   - nvalt # fast note taking
@@ -126,14 +125,14 @@ homebrew_cask_apps:
   - qlmarkdown # quick look .md files
   - qlstephen # quick look extension-less text files
   - sequel-pro # FREE SQL GUI!
-  - shimo # VPN Client
+  #- shimo # VPN Client
   - shortcat # kill your mouse
   - shuttle # ssh management
-  - skype
+  #- skype
   - sourcetree
   #- sts
   - transmission # torrents
   - tunnelblick
   - visual-studio-code
-  - wifi-explorer
+  #- wifi-explorer
   - java # Installs Java8

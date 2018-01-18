@@ -9,9 +9,10 @@
     - vars/vars-dockutil.yml
 
   roles:
-    - geerlingguy.homebrew
-    - geerlingguy.dotfiles
-#    - fubarhouse.sublime
+    #- geerlingguy.homebrew
+    - role: geerlingguy.homebrew
+      tags: ['homebrew']
+    #- geerlingguy.dotfiles
 
   tasks:
     - include: tasks/ansible-setup.yml
@@ -19,8 +20,7 @@
 #    - include: tasks/preferences.yml
     - include: tasks/dockutil.yml
       when: '"dockutil" in homebrew_installed_packages'
-
+  
     - name: Run .osx dotfiles.
-      command: ~/.osx --no-restart
+      shell: "{{ osx_script }}"
       changed_when: false
-      when: '".osx" in dotfiles_files'

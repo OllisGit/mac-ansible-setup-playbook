@@ -50,7 +50,7 @@ You can do this as many times as you like and re-run the `ansible-playbook` comm
 
 ### System Settings
 
-It also installs a few useful system preferences/settings/tweaks with a toned-down verson of Matt Mueller's [OSX-for Hackers script](https://gist.github.com/MatthewMueller/e22d9840f9ea2fee4716).
+It also installs a few useful system preferences/settings/tweaks with a toned-down version of Matt Mueller's [OSX-for Hackers script](https://gist.github.com/MatthewMueller/e22d9840f9ea2fee4716).
 
 It does some reasonably gnarly stuff e.g.
 
@@ -63,26 +63,140 @@ It does some reasonably gnarly stuff e.g.
 
 so you need read it very carefully first. (see scripts/system_settings.sh)
 
-TODO: moar sick settings with https://github.com/ryanmaclean/OSX-Post-Install-Script
+TODO: more sick settings with https://github.com/ryanmaclean/OSX-Post-Install-Script
 
 ### User Preferences
 
-It then syncs your user prefs with dotfiles+rcm
+In addition it user specific preferences (dotfiles) will pulled from Github as well
 
-It grabs the [thoughttbot/dotfiles](https://github.com/thoughtbot/dotfiles) repo, saves it in `~/src_dotfiles/thoughtbot/dotfiles` and symlinks it to ~/dotfiles.
+1. Grabbing [thoughttbot/dotfiles](https://github.com/thoughtbot/dotfiles) repo, saves it in `~/src_dotfiles/thoughtbot/dotfiles` and symlinks it to ~/dotfiles.
 
-It then grabs [MNicks/dotfiles](https://github.com/MNicks/dotfiles) repo, saves it in `~/src_dotfiles/MNicks/dotfiles` and symlinks it to ~/dotfiles-local
+1. Grabbing [MNicks/dotfiles](https://github.com/MNicks/dotfiles) repo, saves it in `~/src_dotfiles/MNicks/dotfiles` and symlinks it to ~/dotfiles-local
 
-You probably want to change the `dotfile_repo_username` variable in `vars/main.yml`to match your github username :-)
+1. Running `rcup` to initialize your dotfiles.
 
-It then runs rcup to initialize your dotfiles.
+You probably want to change the `dotfile_repo_username` variable in `vars/main.yml`to match your github username and therefore you personal dotfiles :-)
 
-### Apple Store Products
 
-  - BlackMagic Disk Speed test
-  - Microsoft OneDrive
+## Included Applications / Configuration
 
-My [dotfiles](https://github.com/fubarhouse/mac-dev-playbook-dotfiles) are also installed into the current user's home directory.
+### Applications
+
+Apps installed with Homebrew Cask:
+
+  - apptrap # remove associated prefs when uninstalling
+  - appzapper # uninstaller
+  #- atom # sublime without annoying popup | https://atom.io/download/mac
+  - bettertouchtool # window snapping. (maybe Moom is more lightweight?)
+  - captur #ui wrapper for osx screenscraper
+  - cheatsheet # know your shortcuts
+  - cyberduck # ftp, s3, openstack
+  - dash # totally sick API browser
+  - diffmerge # free visual diq
+  - disk-inventory-x # reclaim space on your expensive-ass Apple SSD | http://www.derlien.com/
+  - dropbox # a worse Mega Sync
+  - eve # learn your shortcuts
+  - firefox
+  - firefoxdeveloperedition
+  - font-hack-nerd-font
+  - go2shell
+  - imageoptim # optimize images
+  - istumbler # network discovery GUI
+  - intellij-idea
+  - iterm2
+  - jumpcut # awesome clipboard
+  - karabiner # Keyboard customization
+  - keka # file archiving
+  - licecap # GIFs !
+  - mactracker # benchmarking
+  - monolingual # remove unneeded osx lang files
+  - nvalt # fast note taking
+  - onedrive
+  - onyx # system maintenance
+  - qlcolorcode # quick look syntax highlighting
+  - qlimagesize # quick look image dimensions
+  - qlmarkdown # quick look .md files
+  - qlstephen # quick look extension-less text files
+  - sequel-pro # FREE SQL GUI!
+  - shortcat # kill your mouse
+  - shuttle # ssh management
+  - sourcetree
+  #- sts
+  - transmission # torrents
+  - tunnelblick
+  - visual-studio-code
+  - wifi-explorer
+  - java # Installs Java8
+
+There are several more common cask apps listed in the ./vars/vars-homebrew.yml - simply uncomment them to include them in your install. 
+
+
+### Packages/Utilities 
+ 
+Things installed with Homebrew:
+
+  - ack
+  - autoconf
+  - autojump # quickly navigate from cmd line
+  - bash # Bash 4
+  - bash-completion
+  - battery
+  - bazel
+  - bfg
+  - brew-cask-completion
+  - cowsay # amazing
+  - coreutils # Install GNU core utilities (those that come with OS X are outdated)
+  - docker # | https://docs.docker.com/installation/mac/
+  - docker-clean
+  - docker-cloud
+  - docker-compose
+  - docker-gen
+  - docker-machine
+  - docker-swarm
+  - findutils  # Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
+  - httpie
+  - git
+  - jq
+  - hub # github
+  - launchctl-completion
+  - libevent
+  - libffi
+  - libvterm
+  - libxml2
+  - libyaml
+  - macvim
+  - mas
+  - maven
+  - mcrypt
+  - md5sha1sum
+  - mobile-shell
+  - moreutils
+  - mtr # better traceroute
+  - node
+  - npm
+  - nvm
+  - openssl
+  - packer
+  - packer-completion
+  - pandoc
+  - parallel
+  - pip-completion
+  - postgresql
+  - pup
+  - pv
+  - ssh-copy-id
+  - readline
+  - rename # rename multiple files
+  - rsync
+  - the_silver_searcher # fast ack-grep
+  - tmux
+  - tree
+  - tmux
+  - vim
+  - wget
+  - zsh
+
+There are several more utils listed in the /vars/vars-homebrew.yml - simply uncomment them to include them in your install. 
 
 ## Ansible for DevOps
 
@@ -92,8 +206,4 @@ Check out [Ansible for DevOps](http://www.ansiblefordevops.com/), which will tea
 
 [Jeff Geerling](http://jeffgeerling.com/) for creating the amazing [mac-dev-playbook](https://github.com/geerlingguy/mac-dev-playbook).
 
-## Authors/Contributors
-
-[Karl Hepworth](http://twitter.com/fubarhouse), Making this fork more personalized.
-
-[Jeff Geerling](http://jeffgeerling.com/), 2014 (originally inspired by [MWGriffin/ansible-playbooks](https://github.com/MWGriffin/ansible-playbooks)).
+Nauman Leghari for his [mac-dev-playbook](https://github.com/nauman-leghari-wipro/mac-dev-playbook) adaption which was used as basis for this repo

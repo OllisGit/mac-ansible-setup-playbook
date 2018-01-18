@@ -31,40 +31,48 @@
   shell: brew tap thoughtbot/formulae && brew install rcm
   when: rcm_installed.stat.exists == false
 
-- name: Check ~/src_dotfiles dir exists
-  stat: path=~/src_dotfiles/
+# install 'thoughtbot/dotfiles' to local disk
+- name: Check {{ dotfiles_repo_dest }} dir exists
+  stat: path={{ dotfiles_repo_dest }}
   register: src_dir_exists
 
-- name: Assures ~/src_dotfiles dir exists
-  file: path=~/src_dotfiles state=directory
+- name: Assures {{ dotfiles_repo_dest }} dir exists
+  file: path={{ dotfiles_repo_dest }} state=directory
 
-- name: Assures ~/src_dotfiles/thoughtbot dir exists
-  file: path=~/src_dotfiles/thoughtbot state=directory
+#- name: Assures ~/src_dotfiles/thoughtbot dir exists
+#  file: path=~/src_dotfiles/thoughtbot state=directory
 
 - name: Install thoughtbot/dotfiles
-  git: repo=https://github.com/thoughtbot/dotfiles.git dest=~/src_dotfiles/thoughtbot/dotfiles
+  git: repo=https://github.com/thoughtbot/dotfiles.git dest={{ dotfiles_repo_dest }}
 
-- name: Link ~/dotfiles to ~/src_dotfiles/thoughtbot/dotfiles
+- name: Link ~/dotfiles to {{ dotfiles_repo_dest }}
   file: dest=~/dotfiles
-        src=~/src_dotfiles/thoughtbot/dotfiles
+        src={{ dotfiles_repo_dest }}
         state=link
         force=yes
 
-- name: Assures ~/src_dotfiles/{{ dotfile_repo_username }} dir exists
-  file: path=~/src_dotfiles/{{ dotfile_repo_username }} state=directory
+# install custom dotfiles as extention to thoughtbot/dotfiles
+- name: Check {{ dotfiles_local_repo_dest }} dir exists
+  stat: path={{ dotfiles_local_repo_dest }}
+  register: src_dir_exists
+
+- name: Assures {{ dotfiles_local_repo_dest }} dir exists
+  file: path={{ dotfiles_local_repo_dest }} state=directory
 
 - name: Install {{ dotfile_repo_username }}/dotfiles
-  git: repo=https://github.com/{{ dotfile_repo_username }}/dotfiles.git dest=~/src_dotfiles/{{ dotfile_repo_username }}/dotfiles
+  git: repo=https://github.com/{{ dotfile_repo_username }}/dotfiles.git dest={{ dotfiles_local_repo_dest }}
 
-- name: Link ~/dotfiles-local to ~/src_dotfiles/{{ dotfile_repo_username }}/dotfiles
+- name: Link ~/dotfiles-local to {{ dotfiles_local_repo_dest }}
   file: dest=~/dotfiles-local
-        src=~/src_dotfiles/{{ dotfile_repo_username }}/dotfiles
+        src={{ dotfiles_local_repo_dest }}
         state=link
         force=yes
 
-- name: Generate dotfiles with rcup
-  shell: env RCRC=~/dotfiles/rcrc rcup
+- name: Installs fonts coming with ~/{{ dotfiles_local_repo_dest }}/fonts
+  shell: . ~/{{ dotfiles_local_repo_dest }}/fonts/install.sh
 
+- name: Generate dotfiles with rcup
+  shell: env RCRC=~/{{ dotfiles_repo_dest }}/rcrc rcup
 
 ## POST INSTALL STEPS / Cask gotchas
 #
