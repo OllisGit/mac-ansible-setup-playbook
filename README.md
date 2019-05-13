@@ -2,6 +2,27 @@
 
 This playbook installs and configures most of the software I use on my Mac for web and software development.
 
+## Short overview how it works
+
+1. Download ````install.sh```` from github-master (see below sh/curl-command)
+2. The script does the following:
+    - check/install for "Apple Command Line tools"
+    - check/install "Homebrew"
+    - check/install(via brew) "Ansible"
+    - clone ````this git```` to local folder nammed ````/Users/<yourName>/.setup````
+3. Execute the ansible-playbook: ````./main.yml````. It includes the following tasks/roles:
+    - DockUtil      Remove/Add/Move Items releated to Dock-Bar
+
+Depending on your setup requirments you need to change the following files:
+
+| Filename | Content |
+|----------|---------|
+| vars/main.yml                | Update dotfile_repo_username                                   |
+| vars/dockutil.yml            | Lists all DockItems you want                                   |
+| vars/homebrew.yml            | Lists all Application you want to install via brew/cask        |
+| tasks/main.yml                | oy-my-zsh, dotfiles, Monolingual (removes languages)          |
+| scripts/system_settings.sh    | System Settings like hide Spotlight-Icon, etc                 |
+
 ## Installation
 
 ### Fast Install
@@ -9,7 +30,6 @@ This playbook installs and configures most of the software I use on my Mac for w
 If you'd like to start with my default list of tools and apps (see Included Apps/Config below), then simply install with;
 
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/MNicks/mac-dev-playbook/master/install.sh)"
-
 
 You can always customize the install after-the-fact (see below), and re-run the playbook. It will skip over any installed apps.
 
